@@ -2,6 +2,16 @@
 #include <stdio.h>
 #include <vector>
 #include <algorithm>
+#include <memory>
+
+template<typename V>
+class Object {
+private:
+    V val_;
+public:
+    Object(V val) : val_(val) {}
+    V GetVal() const { return val_; }
+};
 
 int main() {
     std::cout << "Hello CMakeList.txt" << std::endl;
@@ -22,4 +32,7 @@ int main() {
     // for (const auto& n : vec) {
     //     std::cout << n << std::endl;
     // }
+    std::unique_ptr<Object<int>> obj_;
+    obj_.reset(new Object<int>(1));
+    std::cout << obj_->GetVal() << std::endl;
 }
