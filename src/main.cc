@@ -4,16 +4,19 @@
 #include <algorithm>
 #include <memory>
 
-template<typename V>
-class Object {
+template <typename V>
+class Object
+{
 private:
     V val_;
+
 public:
     Object(V val) : val_(val) {}
     V GetVal() const { return val_; }
 };
 
-int main() {
+int main()
+{
     std::cout << "Hello CMakeList.txt" << std::endl;
     printf("Hello %d\n", 888);
 
@@ -21,7 +24,8 @@ int main() {
     vec.clear();
     std::cout << "vec count: " << vec.size() << std::endl;
     vec.emplace_back(1);
-    for (const auto& n : vec) {
+    for (const auto &n : vec)
+    {
         std::cout << n << std::endl;
     }
     std::cout << "--------------------" << std::endl;
@@ -35,4 +39,6 @@ int main() {
     std::unique_ptr<Object<int>> obj_;
     obj_.reset(new Object<int>(1));
     std::cout << obj_->GetVal() << std::endl;
+
+    std::cout << "test branch conflit issue2" << std::endl;
 }
