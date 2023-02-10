@@ -39,4 +39,6 @@ int main()
     std::unique_ptr<Object<int>> obj_;
     obj_.reset(new Object<int>(1));
     std::cout << obj_->GetVal() << std::endl;
+
+    std::cout << "test branch conflit issue2" << std::endl;
 }
